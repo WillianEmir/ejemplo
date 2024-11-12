@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/skeleton.css" />
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <header id="header" class="header">
-      <div class="container">
-        <div class="row">
-          <div class="four columns centrar">
-            <img src="img/logo.svg" alt="Logo" loading="lazy">
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="three columns centrar">
+                    <img src="img/logo.svg" alt="Logo" loading="lazy">
+                </div>
+                <div class="two columns u-pull-right">
+                    <div class="five columns padre" style="padding: 17px 0 0 0">
+                        <img src="img/carrito.png" alt="carrito" id="imagen-carrito">
+                        <div class="carrito">
+                            <table id="lista-carrito" class="u-full-width">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
-  </body>
+</body>
+
 </html>
