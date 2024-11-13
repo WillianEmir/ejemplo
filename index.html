@@ -12,32 +12,32 @@
 
 <body>
    <header id="header" class="header">
-      <div class="container elementos-header">
-         <div class="three columns">
-            <img src="img/logo.svg" alt="logo">
-         </div>
-         <div class="four columns menu">
-            <div class="centrar">
-               <div class="two columns centrar">
-                  <img src="img/carrito.png" alt="icono-carrito">
+      <div class="container">
+         <div class="row logo-carrito">
+            <div class="three columns logo">
+               <img src="img/logo.svg" alt="logo">
+            </div>
+            <div class="two columns carrito u-pull-right">
+               <div class="four columns carrito-icono">
+                  <img src="img/carrito.png" alt="icono del carrito">
                </div>
-            </div>
-            <div class="carrito">
-               <table id="lista-carrito"">
-                  <thead>
-                     <tr>
-                        <th>Imagen</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th></th>
-                     </tr>
-                  </thead>
-                  <tbody></tbody>
-               </table>
-            </div>
-         </div>
-      </div>
+               <div class="carrito-items">
+                  <table class="u-full-width">
+                     <thead>
+                        <tr>
+                           <th>Imagen</th>
+                           <th>Nombre</th>
+                           <th>Precio</th>
+                           <th>Cantidad</th>
+                        </tr>
+                     </thead>
+                     <tbody></tbody>
+                  </table>
+                  <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+               </div>
+            </div><!-- .carrito -->
+         </div><!-- .row -->
+      </div><!-- .container -->
    </header><!-- .header -->
 </body>
 
