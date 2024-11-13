@@ -2,43 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito de Compras</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/skeleton.css" />
-    <link rel="stylesheet" href="css/style.css" />
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Carrito de Compras</title>
+   <link rel="stylesheet" href="css/normalize.css" />
+   <link rel="stylesheet" href="css/skeleton.css" />
+   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <header id="header" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="three columns centrar">
-                    <img src="img/logo.svg" alt="Logo" loading="lazy">
-                </div>
-                <div class="two columns u-pull-right">
-                    <div class="five columns padre" style="padding: 17px 0 0 0">
-                        <img src="img/carrito.png" alt="carrito" id="imagen-carrito">
-                        <div class="carrito">
-                            <table id="lista-carrito" class="u-full-width">
-                                <thead>
-                                    <tr>
-                                        <th>Imagen</th>
-                                        <th>Nombre</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+   <header id="header" class="header">
+      <div class="container">
+         <div class="row logo-carrito">
+            <div class="three columns logo">
+               <img src="img/logo.svg" alt="logo">
             </div>
-        </div>
-    </header>
+            <div class="two columns carrito u-pull-right">
+               <div class="four columns carrito-icono">
+                  <img src="img/carrito.png" alt="icono del carrito">
+               </div>
+               <div class="carrito-items">
+                  <table class="u-full-width">
+                     <thead>
+                        <tr>
+                           <th>Imagen</th>
+                           <th>Nombre</th>
+                           <th>Precio</th>
+                           <th>Cantidad</th>
+                        </tr>
+                     </thead>
+                     <tbody></tbody>
+                  </table>
+                  <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+               </div>
+            </div><!-- .carrito -->
+         </div><!-- .row -->
+      </div><!-- .container -->
+   </header><!-- .header -->
 </body>
 
 </html>
