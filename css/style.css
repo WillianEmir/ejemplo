@@ -74,3 +74,45 @@ img {
 
 /* BANNER HERO */
 
+.banner {
+    background-image: url(../img/pokemon.jpg);
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenido-banner {
+    margin-top: 60px;
+}
+
+.contenido-banner p, .contenido-banner h2 {
+    color: white;
+    font-weight: bold;
+}
+
+.contenido-banner form {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.contenido-banner form #buscador {
+    height: 60px;
+    width: 100%;
+}
+
+.contenido-banner form .submit-buscador {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 5px;
+    background-image: url(../img/lupa.png);
+    height: 50px;
+    width: 50px;
+    text-indent: -99px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:none;
+}
+
