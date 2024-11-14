@@ -1,12 +1,15 @@
 html {
     font-size: 62.5%;
 }
+
 body {
     background-color: #f5f3f3
 }
+
 header {
     background: white;
 }
+
 img {
     max-width: 100%;
 }
@@ -16,16 +19,20 @@ img {
 .logo-carrito {
     padding: 15px 0 0 0;
 }
+
 .logo {
-    min-width: 150px;
+    min-width: 130px;
 }
+
 .carrito {
     margin-top: 20px;
-    padding-bottom: 23px;
+    padding-bottom: 15px;
 }
+
 .carrito .carrito-items {
     display: none;
 }
+
 .carrito-icono {
     position: relative;
     min-width: 30px;
@@ -34,14 +41,17 @@ img {
 @media (max-width: 549px) {
     .logo-carrito {
         display: flex;
-        justify-content: space-between;    
+        justify-content: space-between;
     }
+
     .carrito-icono {
         width: 30px;
     }
+
     .logo {
         width: 150px;
     }
+
     .carrito {
         width: 40px;
     }
@@ -52,7 +62,7 @@ img {
     position: absolute;
     right: 0;
 
-    top:100%;
+    top: 100%;
     z-index: 1;
     background-color: white;
     padding: 20px;
@@ -66,6 +76,7 @@ img {
         top: 80%;
         opacity: 0;
     }
+
     100% {
         top: 100%;
         opacity: 1;
@@ -85,8 +96,9 @@ img {
     margin-top: 60px;
 }
 
-.contenido-banner p, .contenido-banner h2 {
-    color: white;
+.contenido-banner p,
+.contenido-banner h2 {
+    color: rgb(13, 240, 89);
     font-weight: bold;
 }
 
@@ -113,6 +125,33 @@ img {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
-    border:none;
+    border: none;
 }
 
+/* BARRA */
+
+#section {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.barra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon p {
+    display: block;
+    margin: 0 0 0 10px;
+    font-size: 25px;
+}
+
+.icon img {
+    min-width: 40px;
+}
