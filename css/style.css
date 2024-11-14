@@ -16,6 +16,9 @@ img {
 .logo-carrito {
     padding: 15px 0 0 0;
 }
+.logo {
+    min-width: 150px;
+}
 .carrito {
     margin-top: 20px;
     padding-bottom: 23px;
@@ -25,7 +28,25 @@ img {
 }
 .carrito-icono {
     position: relative;
+    min-width: 30px;
 }
+
+@media (max-width: 549px) {
+    .logo-carrito {
+        display: flex;
+        justify-content: space-between;    
+    }
+    .carrito-icono {
+        width: 30px;
+    }
+    .logo {
+        width: 150px;
+    }
+    .carrito {
+        width: 40px;
+    }
+}
+
 .carrito:hover .carrito-items {
     display: block;
     position: absolute;
@@ -50,3 +71,6 @@ img {
         opacity: 1;
     }
 }
+
+/* BANNER HERO */
+
