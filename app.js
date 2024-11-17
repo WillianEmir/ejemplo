@@ -28,7 +28,7 @@ function mostrarListadoPokemon(listadoPokemonArray) {
                                 <h4>${name}</h4>
                                 <p>Poder: ${base_experience}</p>
                                 <p>Precio: $400</p>
-                                <a class="u-full-width button-primary button input agregar-carrito" data-id="${id}" onclick="hola(${id}, ${name})">Agregar al Carrito</a>
+                                <a class="u-full-width button-primary button input agregar-carrito" data-id="${id}" onclick="hola(${id}, '${name}')">Agregar al Carrito</a>
                             </div>
                         </div>
                     </div>
