@@ -1,6 +1,16 @@
-const contenido = document.querySelector('.contenido')
+const contenido = document.querySelector('.contenido');
+const tbody = document.querySelector('#tbody');
 
-document.addEventListener('DOMContentLoaded', cargarCards);
+let arrayCarrito = []; 
+
+cargarEventListeners();
+
+function cargarEventListeners() {
+    document.addEventListener('DOMContentLoaded', cargarCards);
+
+    contenido.addEventListener('click', agregarCarrito)
+}
+
 function cargarCards() {
     const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=50';
 
@@ -10,7 +20,7 @@ function cargarCards() {
 }
 
 function mostrarListadoPokemon(listadoPokemonArray) {
-    console.log(listadoPokemonArray);
+
     listadoPokemonArray.forEach(pokemon => {
         fetch(pokemon.url)
             .then(respuesta => respuesta.json())
@@ -27,15 +37,48 @@ function mostrarListadoPokemon(listadoPokemonArray) {
                                 <h4>${name}</h4>
                                 <p>Poder: ${base_experience}</p>
                                 <p>Precio: $400</p>
-                                <a class="u-full-width button-primary button input agregar-carrito" data-id="${id}" onclick="hola(${id}, '${name}')">Agregar al Carrito</a>
+                                <a class="u-full-width button-primary button input agregar-carrito" data-id="${id}">Agregar al Carrito</a>
                             </div>
                         </div>
                     </div>
                 `;
             })
     })
+}  
+
+function agregarCarrito(e) {
+
+    e.preventDefault();
+
+    if(e.target.classList.contains('agregar-carrito')) {
+        const pokemon = e.target.parentElement.parentElement;
+
+        leerDatosPokemon(pokemon);
+    }
 }
 
-function hola(id, name) {
-    console.log(`Hola ${name}, eres el número ${id}`);
+function leerDatosPokemon(pokemon) {
+    const objPokemon = {
+        img: pokemon.querySelector('img').src,
+        name: pokemon.querySelector('div h4').textContent, 
+        price: 400,
+        id: pokemon.querySelector('a').getAttribute('data-id')
+    };
+    
+    arrayCarrito = [...arrayCarrito, objPokemon];
+
+    console.log(arrayCarrito); 
+
+    carritoHTML();
+
+}
+
+function carritoHTML() {
+    arrayCarrito.forEach(pokemon => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${pokemon.name}</td>
+            </tr>
+        `;
+    })
 }
