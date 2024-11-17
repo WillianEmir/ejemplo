@@ -1,9 +1,6 @@
-html, body{
-    display: flex;
-    flex-direction: column;
-    height:100vh;
-    margin: 0;
-  }
+body {
+    background-color: whitesmoke;
+}
 
 header {
     background: white;
@@ -144,7 +141,7 @@ img {
 /* BARRA */
 
 #section {
-    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    background-image: linear-gradient(to top, #dadee7 0%, #f0f3f6 100%);
 }
 
 .barra {
@@ -169,16 +166,54 @@ img {
     min-width: 40px;
 }
 
+/* MAIN */
+
 main {
     flex: 1;
 }
 
+.contenido {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.249);
+    border-radius: 4px;
+}
+
+.info-card {
+    padding: 10px;
+}
+
+.info-card p {
+    margin: 5px 0
+}
+
+.card img {
+    height: 200px;
+}
+
+.card div {
+    padding: 5px;
+    text-align: center;
+}
+
+/* FOOTER */
+
 .footer {
     text-align: center;
-    height: 100px;
+    height: 80px;
+    background-image: linear-gradient(to top, #dadee7 0%, #f0f3f6 100%)
 }
 
 .parent-text-footer p {
-    line-height: 100px;
+    line-height: 80px;
     margin: 0;
+    font-size: large;
+    font-family: sans-serif;
 }
