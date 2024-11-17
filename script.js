@@ -1,6 +1,7 @@
-const contenido = document.querySelector('.contenido')
+const contenido = document.querySelector('.contenido');
 
 document.addEventListener('DOMContentLoaded', cargarCards);
+
 function cargarCards() {
     const url = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=50';
 
@@ -21,7 +22,7 @@ function mostrarListadoPokemon(listadoPokemonArray) {
                     <div class="card-parent">
                         <div class="card">
                             <div>
-                                <img src="${front_default}">
+                                <img src="${front_default}" loading="lazy">
                             </div>
                             <div class="info-card">
                                 <h4>${name}</h4>
