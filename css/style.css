@@ -62,9 +62,13 @@ img {
     z-index: 2;
     background-color: white;
     padding: 20px;
-    min-height: 400px;
+    max-height: 300px;
     min-width: 300px;
     animation: articulosCarrito 0.3s ease;
+}
+
+.carrito-items {
+    overflow-y: scroll;
 }
 
 @keyframes articulosCarrito {
@@ -77,6 +81,23 @@ img {
         top: 100%;
         opacity: 1;
     }
+}
+
+#tbody img {
+    width: 40px;
+}
+#tbody td {
+    text-align: center;
+}
+
+.borrar-curso {
+    background-color: red;
+    width: 24px;
+    display: block;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
 }
 
 /* BANNER HERO */

@@ -3,12 +3,17 @@ const tbody = document.querySelector('#tbody');
 
 let arrayCarrito = []; 
 
-cargarEventListeners();
+cargarEventListeners(); 
 
 function cargarEventListeners() {
-    document.addEventListener('DOMContentLoaded', cargarCards);
+    cargarCards();
 
-    contenido.addEventListener('click', agregarCarrito)
+    contenido.addEventListener('click', agregarCarrito);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        arrayCarrito = JSON.parse(localStorage.getItem('arrayCarrito')) ?? [];
+        carritoHTML();
+    })
 }
 
 function cargarCards() {
@@ -62,23 +67,39 @@ function leerDatosPokemon(pokemon) {
         img: pokemon.querySelector('img').src,
         name: pokemon.querySelector('div h4').textContent, 
         price: 400,
-        id: pokemon.querySelector('a').getAttribute('data-id')
+        id: pokemon.querySelector('a').getAttribute('data-id'),
+        amount: 1
     };
     
     arrayCarrito = [...arrayCarrito, objPokemon];
 
-    console.log(arrayCarrito); 
+    localStorage.setItem('arrayCarrito', JSON.stringify(arrayCarrito))
 
     carritoHTML();
 
 }
 
 function carritoHTML() {
+
+    limpiarHTML(tbody);
+
     arrayCarrito.forEach(pokemon => {
         tbody.innerHTML += `
             <tr>
+                <td><img src="${pokemon.img}"></td>
                 <td>${pokemon.name}</td>
+                <td>$400</td>
+                <td>${pokemon.amount}</td>
+                <td>
+                    <a href="#" class="borrar-curso" data-id="${pokemon.id}">X</a>
+               </td>
             </tr>
         `;
     })
+}
+
+function limpiarHTML(elemento) {
+    while(elemento.firstChild) {
+        elemento.removeChild(elemento.firstChild)
+    }
 }
