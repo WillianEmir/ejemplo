@@ -128,7 +128,8 @@ function eliminarPokemon(e) {
     }
 }
 
-function vaciarCarrito() {
+function vaciarCarrito(e) {
+    e.preventDefault();
     arrayCarrito = [];
     sincronizarStorage();
     limpiarHTML(tbody);
