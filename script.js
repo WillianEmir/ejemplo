@@ -1,14 +1,19 @@
 const contenido = document.querySelector('.contenido');
 const tbody = document.querySelector('#tbody');
+const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 
-let arrayCarrito = []; 
+let arrayCarrito = [];
 
-cargarEventListeners(); 
+cargarEventListeners();
 
 function cargarEventListeners() {
     cargarCards();
 
     contenido.addEventListener('click', agregarCarrito);
+
+    tbody.addEventListener('click', eliminarPokemon);
+
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
 
     document.addEventListener('DOMContentLoaded', () => {
         arrayCarrito = JSON.parse(localStorage.getItem('arrayCarrito')) ?? [];
@@ -49,13 +54,13 @@ function mostrarListadoPokemon(listadoPokemonArray) {
                 `;
             })
     })
-}  
+}
 
 function agregarCarrito(e) {
 
     e.preventDefault();
 
-    if(e.target.classList.contains('agregar-carrito')) {
+    if (e.target.classList.contains('agregar-carrito')) {
         const pokemon = e.target.parentElement.parentElement;
 
         leerDatosPokemon(pokemon);
@@ -65,18 +70,26 @@ function agregarCarrito(e) {
 function leerDatosPokemon(pokemon) {
     const objPokemon = {
         img: pokemon.querySelector('img').src,
-        name: pokemon.querySelector('div h4').textContent, 
+        name: pokemon.querySelector('div h4').textContent,
         price: 400,
         id: pokemon.querySelector('a').getAttribute('data-id'),
         amount: 1
     };
-    
-    arrayCarrito = [...arrayCarrito, objPokemon];
 
-    localStorage.setItem('arrayCarrito', JSON.stringify(arrayCarrito))
-
+    if (arrayCarrito.some(element => objPokemon.id === element.id)) {
+        const updateArray = arrayCarrito.map(element => {
+            if (objPokemon.id === element.id) {
+                parseInt(element.amount++)
+                return element;
+            } else {
+                return element;
+            }
+        })
+        arrayCarrito = [...updateArray];
+    } else {
+        arrayCarrito = [...arrayCarrito, objPokemon];
+    }
     carritoHTML();
-
 }
 
 function carritoHTML() {
@@ -96,10 +109,33 @@ function carritoHTML() {
             </tr>
         `;
     })
+
+    sincronizarStorage();
+}
+
+function sincronizarStorage() {
+    localStorage.setItem('arrayCarrito', JSON.stringify(arrayCarrito))
+}
+
+function eliminarPokemon(e) {
+    e.preventDefault();
+
+    if(e.target.classList.contains('borrar-curso')) {
+        const IdBtnBorrar = e.target.getAttribute('data-id');
+        arrayCarrito = arrayCarrito.filter(element => IdBtnBorrar !== element.id);
+
+        carritoHTML();
+    }
+}
+
+function vaciarCarrito() {
+    arrayCarrito = [];
+    sincronizarStorage();
+    limpiarHTML(tbody);
 }
 
 function limpiarHTML(elemento) {
-    while(elemento.firstChild) {
+    while (elemento.firstChild) {
         elemento.removeChild(elemento.firstChild)
     }
 }
